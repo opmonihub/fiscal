@@ -1,0 +1,584 @@
+.fiscal-dashboard .fiscal-scope {
+  color: var(--secondary);
+  font-size: 13px;
+  margin: 10px 0 20px;
+  line-height: 1.6;
+}
+.fiscal-dashboard .fiscal-company-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text);
+}
+.fiscal-dashboard .fiscal-company-control select {
+  max-width: 310px;
+  min-height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 6px 10px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+}
+.fiscal-dashboard .fiscal-return {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  .fiscal-dashboard .fiscal-company-control {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .fiscal-dashboard .fiscal-company-control select {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.fiscal-open-xml {
+  font: inherit;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+}
+.fiscal-xml-viewer {
+  min-width: 0;
+  color: var(--text);
+}
+.fiscal-xml-path {
+  overflow-wrap: anywhere;
+  color: var(--secondary);
+  font-size: 12px;
+}
+.fiscal-xml-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0;
+}
+.fiscal-xml-note {
+  font-size: 12px;
+  color: var(--secondary);
+}
+.fiscal-xml-code {
+  max-height: 55vh;
+  overflow: auto;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text);
+  padding: 16px;
+  font:
+    12px/1.7 Consolas,
+    monospace;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.fiscal-document {
+  display: grid;
+  gap: 18px;
+  margin-top: 20px;
+}
+.fiscal-doc-section {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+  margin: 0 0 16px;
+  background: var(--surface);
+}
+.fiscal-doc-section h3 {
+  margin: 0 0 16px;
+  font-size: 16px;
+  color: var(--text);
+}
+.fiscal-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 24px;
+  margin: 0;
+}
+.fiscal-fields dt {
+  font-size: 12px;
+  color: var(--secondary);
+  margin-bottom: 5px;
+}
+.fiscal-fields dd {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+  overflow-wrap: anywhere;
+  line-height: 1.6;
+}
+.fiscal-parties {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.fiscal-parties .fiscal-fields {
+  grid-template-columns: 1fr;
+}
+.fiscal-service {
+  white-space: pre-wrap;
+  line-height: 1.8;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+.fiscal-doc-section summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 4px 0;
+}
+.fiscal-xml-branch {
+  padding: 8px 0 8px 14px;
+  border-left: 1px solid var(--border);
+}
+.fiscal-xml-leaf {
+  display: grid;
+  grid-template-columns: minmax(100px, 1fr) 2fr;
+  gap: 14px;
+  padding: 8px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+.fiscal-xml-leaf > span:first-child {
+  color: var(--secondary);
+}
+@media (max-width: 700px) {
+  .fiscal-fields,
+  .fiscal-parties {
+    grid-template-columns: 1fr;
+  }
+  .fiscal-doc-section {
+    padding: 14px;
+  }
+  .fiscal-xml-leaf {
+    grid-template-columns: 1fr;
+  }
+}
+.central-fiscal {
+  --fiscal-review: light-dark(#855d0e, #f2ca7c);
+  --fiscal-review-bg: light-dark(#fff6df, #342d20);
+  --fiscal-match-bg: light-dark(#e5f3ed, #1b3937);
+  font-variant-numeric: tabular-nums;
+}
+.central-context {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  color: var(--secondary);
+  font-size: 12px;
+}
+.central-context-period {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+.central-context .central-period {
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: -0.2px;
+  font-weight: 650;
+  color: var(--text);
+}
+.central-evidence-state {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.5;
+}
+.central-evidence-state > span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--fiscal-review);
+}
+.central-notice {
+  display: grid;
+  grid-template-columns: minmax(140px, 220px) minmax(0, 1fr);
+  gap: 6px 24px;
+  padding: 16px 20px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--secondary);
+  font-size: 13px;
+  line-height: 1.65;
+  margin: 12px 0 24px;
+}
+.central-notice strong {
+  color: var(--text);
+  font-weight: 600;
+}
+.central-notice p {
+  margin: 0;
+  max-width: 90ch;
+}
+.central-notice p + p {
+  grid-column: 2;
+}
+.central-notice-compact {
+  background: var(--muted);
+  border-color: transparent;
+}
+.central-selection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: var(--secondary);
+  margin: 0 0 16px;
+  padding: 8px 0;
+}
+.central-selection strong {
+  color: var(--text);
+}
+.central-company-identity {
+  display: inline-flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 2px 8px;
+  max-width: 260px;
+  line-height: 1.5;
+  white-space: normal;
+}
+.central-company-identity > span {
+  font-weight: 600;
+}
+.central-company-identity small {
+  color: var(--secondary);
+  font-size: 11px;
+  font-weight: 400;
+}
+.central-number {
+  display: block;
+  min-width: 88px;
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.central-guide-status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  min-width: 140px;
+  max-width: 300px;
+  white-space: normal;
+}
+.central-guide-status small {
+  font-size: 12px;
+  color: var(--secondary);
+  line-height: 1.55;
+}
+.central-status {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 3px 7px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.central-status-review {
+  color: var(--fiscal-review);
+  background: var(--fiscal-review-bg);
+}
+.central-status-matched {
+  color: var(--positive);
+  background: var(--fiscal-match-bg);
+}
+.central-copy-action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+.central-copy-action small {
+  font-size: 11px;
+  color: var(--secondary);
+  white-space: normal;
+}
+.central-review-list {
+  display: flex;
+  flex-direction: column;
+}
+.central-review-item {
+  padding: 10px 0;
+  border-top: 1px solid var(--border);
+}
+.central-review-item:first-child {
+  border-top: 0;
+  padding-top: 4px;
+}
+.central-review-item:last-child {
+  padding-bottom: 4px;
+}
+.central-review-company {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+}
+.central-source-page {
+  font-size: 11px;
+  color: var(--secondary);
+}
+.central-review-detail h3 {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0 0 8px;
+  color: var(--text);
+}
+.central-review-detail p {
+  font-size: 13px;
+  line-height: 1.6;
+  max-width: 80ch;
+  margin: 0;
+  color: var(--secondary);
+  overflow-wrap: anywhere;
+}
+.central-compact-metric {
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  min-width: 0;
+}
+.central-metric-value {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+  color: var(--text);
+}
+.central-brief {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 24px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--secondary);
+  margin: 0 0 14px;
+}
+.central-brief strong {
+  color: var(--text);
+  font-weight: 500;
+}
+.central-review-summary {
+  display: grid;
+  grid-template-columns: minmax(150px, 220px) 1fr auto;
+  align-items: baseline;
+  gap: 12px;
+  font-size: 13px;
+  cursor: pointer;
+  list-style-position: inside;
+}
+.central-review-summary::after {
+  content: "+";
+  color: var(--secondary);
+  grid-column: 4;
+  grid-row: 1;
+}
+.central-review-item[open] > .central-review-summary::after {
+  content: "−";
+}
+.central-review-title {
+  font-weight: 500;
+  line-height: 1.5;
+}
+.central-review-detail {
+  padding: 10px 24px 4px 0;
+}
+.central-number-difference {
+  color: var(--fiscal-review);
+  font-weight: 600;
+}
+.fiscal-open-xml {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 5px;
+}
+.fiscal-dashboard .fiscal-company-search {
+  width: 250px;
+}
+.fiscal-dashboard .fiscal-company-search input {
+  min-height: 34px;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+@media (max-width: 700px) {
+  .central-review-summary {
+    grid-template-columns: 1fr auto;
+    gap: 4px 10px;
+  }
+  .central-review-summary .central-review-title {
+    grid-column: 1/-1;
+    grid-row: 2;
+  }
+  .central-review-summary::after {
+    grid-column: 3;
+  }
+  .central-context .central-period {
+    font-size: 18px;
+  }
+  .central-review-item {
+    padding: 10px 0;
+  }
+  .central-compact-metric {
+    padding: 10px 12px;
+  }
+  .central-review-detail {
+    padding: 8px 0;
+  }
+}
+.central-empty {
+  margin: 12px 0;
+  padding: 20px;
+  border: 1px dashed var(--border-strong);
+  border-radius: 8px;
+  color: var(--secondary);
+  font-size: 13px;
+  line-height: 1.65;
+}
+.fiscal-dashboard .fiscal-return:hover,
+.fiscal-open-xml:hover {
+  background: var(--control-hover);
+}
+.fiscal-dashboard .fiscal-return:focus-visible,
+.fiscal-open-xml:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+@media (max-width: 700px) {
+  .central-context {
+    gap: 10px;
+  }
+  .central-context .central-period {
+    font-size: 21px;
+  }
+  .central-notice,
+  .central-review-item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .central-notice p + p {
+    grid-column: 1;
+  }
+  .central-review-company {
+    flex-direction: row;
+    align-items: baseline;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .central-review-item {
+    padding: 18px 0;
+  }
+  .central-evidence-state {
+    font-size: 11px;
+  }
+  .central-number {
+    min-width: 78px;
+  }
+}
+@media print {
+  .central-review-item {
+    break-inside: avoid;
+  }
+}
+
+.central-receipt-callout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  font-size: 14px;
+  color: var(--text);
+}
+.central-receipt-callout span {
+  color: var(--secondary);
+  font-size: 13px;
+}
+.fiscal-dashboard .fiscal-company-search {
+  position: relative;
+  width: 290px;
+  max-width: 100%;
+  min-width: 0;
+}
+.fiscal-dashboard .fiscal-company-search input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 38px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+}
+.fiscal-dashboard .fiscal-company-search input:focus {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+.fiscal-dashboard .fiscal-company-options {
+  position: fixed;
+  inset: auto;
+  margin: 0;
+  box-sizing: border-box;
+  max-height: 300px;
+  overflow: auto;
+  overscroll-behavior: contain;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px #0003;
+  padding: 4px;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.fiscal-dashboard .fiscal-company-options [role="option"] {
+  padding: 10px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+.fiscal-dashboard .fiscal-company-options [aria-selected="true"] {
+  background: var(--muted);
+  font-weight: 600;
+}
+.fiscal-dashboard .fiscal-company-empty {
+  padding: 12px 8px;
+  color: var(--secondary);
+}
+@media (max-width: 600px) {
+  .fiscal-dashboard .fiscal-company-search {
+    width: 100%;
+  }
+  .fiscal-dashboard .fiscal-company-picker {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
